@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://apis.google.com/js/api.js"></script>
+    <script src="https://unpkg.com/pdf-lib@1.14.0"></script>
+    <script src="https://unpkg.com/downloadjs@1.4.7"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.0.272/jspdf.debug.js"></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script defer src="script.js"></script>
+    <title>PDF Form Filler</title>
+  </head>
+
+  <body>
+    <header></header>
+    <main class="d-flex justify-content-center">
+      <!-- LEFT PANNEL -->
+      <div class="left pannel">
+        <!-- DATE PERSONALE -->
+        <form class="inputFields" name="Date-Personale">
+          <div><label id="label">Date personale</label></div>
+          <div class="row">
+            <div class="col">
+              <input type="text" id="nume" placeholder="Nume:" name="nume" />
+            </div>
+            <div class="col">
+              <input
+                type="text"
+                id="prenume"
+                placeholder="Prenume:"
+                name="prenume"
+              />
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <input
+                type="text"
+                id="fiulFiica1"
+                placeholder="fiul/fiica lui:"
+                name="fiulFiica1"
+              />
+            </div>
+            <div class="col">
+              <input
+                type="text"
+                id="fiulFiica2"
+                placeholder="si al/a lui:"
+                name="fiulFiica2"
+              />
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <input type="text" id="cnp" placeholder="CNP:" name="cnp" />
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <input
+                type="text"
+                id="serieCI"
+                placeholder="CI Serie:"
+                name="serieCI"
+              />
+            </div>
+            <div class="col">
+              <input type="text" id="nrCI" placeholder="Numar:" name="nrCI" />
+            </div>
+            <div class="col">
+              <input
+                type="text"
+                id="eliber"
+                placeholder="eliberat de:"
+                name="eliber"
+              />
+            </div>
+            <div class="col">
+              <input
+                type="text"
+                id="dataEliber"
+                placeholder="data:"
+                name="dataEliber"
+              />
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <input
+                type="text"
+                id="locNastere"
+                placeholder="localitate nastere:"
+                name="serieCI"
+              />
+            </div>
+            <div class="col">
+              <input
+                type="text"
+                id="judNastere"
+                placeholder="judet nastere:"
+                name="nrCI"
+              />
+            </div>
+          </div>
+        </form>
+
+        <!-- DATE CONTACT -->
+        <form class="inputFields" name="Date-Contact">
+          <div><label id="label">Date contact</label></div>
+          <div class="row">
+            <div class="col">
+              <input
+                type="text"
+                id="nrTelefon"
+                placeholder="Nr Telefon:"
+                name="nrTelefon"
+              />
+            </div>
+            <div class="col">
+              <input
+                type="text"
+                id="eMail"
+                placeholder="e-mail:"
+                name="eMail"
+              />
+            </div>
+          </div>
+        </form>
+      </div>
+
+      <!-- RIGHT PANNEL -->
+      <div class="right pannel">
+        <!-- ADRESA -->
+        <form class="inputFields" name="Adresa">
+          <div><label id="label">Adresa</label></div>
+          <div class="row">
+            <div class="col">
+              <input
+                type="text"
+                id="strada"
+                placeholder="strada:"
+                name="strada"
+              />
+            </div>
+            <div class="col">
+              <input type="text" id="oras" placeholder="Oras:" name="oras" />
+            </div>
+            <div class="col">
+              <input
+                type="text"
+                id="judDomiciliu"
+                placeholder="Judet:"
+                name="judDomiciliu"
+              />
+            </div>
+            <div class="col">
+              <input type="text" id="tara" placeholder="Tara:" name="tara" />
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <input type="text" id="nr" placeholder="Nr:" name="nrAdresa" />
+            </div>
+            <div class="col">
+              <input type="text" id="bl" placeholder="bl:" name="bloc" />
+            </div>
+            <div class="col">
+              <input type="text" id="sc" placeholder="sc:" name="scara" />
+            </div>
+            <div class="col">
+              <input type="text" id="et" placeholder="etaj:" name="etaj" />
+            </div>
+            <div class="col">
+              <input type="text" id="ap" placeholder="ap:" name="apart" />
+            </div>
+          </div>
+        </form>
+
+        <!-- AUTOTURISM -->
+        <form class="inputFields" name="Autoturism">
+          <div><label id="label">Autoturism</label></div>
+          <div class="row">
+            <div class="col">
+              <select class="dropSelector" id="marca">
+                <option value="">Autoturism</option>
+                <option value="DACIA">DACIA</option>
+                <option value="RENAULT">RENAULT</option>
+              </select>
+            </div>
+            <div class="col">
+              <select class="dropSelector" id="tip">
+                <option value="">Tip</option>
+              </select>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <input
+                type="text"
+                id="caroseria"
+                placeholder="Tip Caroserie:"
+                name="caroseria"
+              />
+            </div>
+            <div class="col">
+              <input type="text" id="vin" placeholder="VIN:" name="vin" />
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <input
+                type="text"
+                id="anFabricatie"
+                placeholder="Anul fabricatiei:"
+                name="anFabricatie"
+              />
+            </div>
+            <div class="col">
+              <input
+                type="text"
+                id="cilindree"
+                placeholder="Cilindree:"
+                name="cilindree"
+              />
+            </div>
+            <div class="col">
+              <input
+                type="text"
+                id="culoare"
+                placeholder="Culoare:"
+                name="culoare"
+              />
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <input
+                type="text"
+                id="combustibil"
+                placeholder="Sursa de energie:"
+                name="combustibil"
+              />
+            </div>
+            <div class="col">
+              <input
+                type="text"
+                id="serieCIV"
+                placeholder="Serie CIV:"
+                name="serieCIV"
+              />
+            </div>
+            <div class="col">
+              <input
+                type="text"
+                id="serieMotor"
+                placeholder="Serie motor:"
+                name="serieMotor"
+              />
+            </div>
+          </div>
+        </form>
+      </div>
+    </main>
+
+    <!-- BUTOANE -->
+    <div class="buttons_container d-flex">
+      <form class="inputFields mx-auto" name="Butoane">
+        <div><label id="label">Genereaza Documente:</label></div>
+
+        <div class="btn-group">
+          <button type="button" id="ditl-sm-pf" class="printDocument hover">
+            Imputernicire ditl-sm-pf
+            <img src="pdfIcon.png" alt="PDF icon" class="pdfIcon" />
+          </button>
+
+          <button
+            type="button"
+            id="declaratieFiscala"
+            class="printDocument hover"
+          >
+            Declaratia Fiscala itl-005
+            <img src="pdfIcon.png" alt="PDF icon" class="pdfIcon" />
+          </button>
+
+          <button
+            type="button"
+            id="fisa-inmatriculare"
+            class="printDocument hover"
+          >
+            Fisa de Inmatriculare
+            <img src="pdfIcon.png" alt="PDF icon" class="pdfIcon" />
+          </button>
+
+          <button
+            type="button"
+            id="contract-de-mandat"
+            class="printDocument hover"
+          >
+            Contract de Mandat <br />
+            <img src="pdfIcon.png" alt="PDF icon" class="pdfIcon" />
+          </button>
+        </div>
+      </form>
+    </div>
+  </body>
+</html>
